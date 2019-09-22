@@ -1,0 +1,42 @@
+//anagram or not
+#include<stdio.h>
+void main()
+{
+    int i=0,j,c1[26]={0},c2[26]={0},count=0;
+    char a1[50],a2[50];
+    printf("\n Enter string1:");
+    gets(a1);
+    printf("\n Enter string2:");
+    gets(a2);
+    while(a1[i]!='\0')
+    {
+        if(a1[i]>='a'||a1[i]<='z')
+        {
+            j=a1[i]-'a';
+            c1[j]++;
+        }
+        i++;
+    }
+    i=0;
+    while(a2[i]!='\0')
+    {
+        if(a2[i]>='a'||a2[i]<='z')
+        {
+            j=a2[i]-'a';
+            c2[j]++;
+        }
+        i++;
+    }
+    for(i=0;i<26;i++)
+    {
+        if(c1[i]==c2[i])
+        {
+            count++;
+        }
+    }
+    if(count==26)
+    printf("\n anagram");
+    else
+    printf("\n not an anagram");
+}
+
